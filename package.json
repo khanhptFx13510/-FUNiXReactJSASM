@@ -20,5 +20,8 @@
   "homepage": "https://github.com/khanhptFx13510/-FUNiXReactJSASM#readme",
   "devDependencies": {
     "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
   }
 }
