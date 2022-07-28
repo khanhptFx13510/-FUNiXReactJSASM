@@ -8,7 +8,7 @@ const products = [];
 const rootDir = require('../util/path')
 // /admin/add-product => Get
 router.get('/add-product',(req, res, next) => {
-   res.sendFile(path.join(rootDir,'views', 'add-product.html'));
+   res.render('add-product', { pageTitle: 'Add Product' });
 })
 
 // /admin/add-product => POST
