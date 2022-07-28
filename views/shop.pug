@@ -4,7 +4,7 @@ html(lang="en")
       meta(charset="UTF-8")
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      title Document
+      title #{docTitle}
       link(rel="stylesheet", href="/css/main.css")
       link(rel="stylesheet", href="/css/product.css")
    body 
@@ -15,3 +15,19 @@ html(lang="en")
                   a.active(href="/") Shop
                li.main-header__item
                   a(href="/admin/add-product") Add Product
+      main 
+         if prod.length > 0
+            div.grid 
+               each product in prod
+                  article.card.product-item
+                     header.card-header 
+                     h1.product__title #{product.title}
+                  div.card__image
+                     img(src="https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_960_720.jpg", alt="image")
+                  div.card-content
+                     h2.product__price $19.99
+                     p.product__decription A very interesting book
+                  div.card__action
+                     button.btn Add to cart
+         else
+            h1 No Products
