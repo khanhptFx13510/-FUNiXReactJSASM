@@ -1,31 +1,31 @@
 {
-  "name": "fx_1510",
-  "version": "1.0.0",
-  "description": "Complete Node.js Guide",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "start-server": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khanhptFx13510/-FUNiXReactJSASM.git"
-  },
-  "author": "khanhptFx_15310",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/khanhptFx13510/-FUNiXReactJSASM/issues"
-  },
-  "homepage": "https://github.com/khanhptFx13510/-FUNiXReactJSASM#readme",
-  "devDependencies": {
-    "nodemon": "^1.18.3"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "ejs": "^3.1.8",
-    "express": "^4.17.2",
-    "express-handlebars": "3.0",
-    "pug": "^3.0.2"
-  }
+   "name": "fx_1510",
+   "version": "1.0.0",
+   "description": "Complete Node.js Guide",
+   "main": "app.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "nodemon app.js",
+      "start-server": "node app.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/khanhptFx13510/-FUNiXReactJSASM.git"
+   },
+   "author": "khanhptFx_15310",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/khanhptFx13510/-FUNiXReactJSASM/issues"
+   },
+   "homepage": "https://github.com/khanhptFx13510/-FUNiXReactJSASM#readme",
+   "devDependencies": {
+      "nodemon": "^1.18.3"
+   },
+   "dependencies": {
+      "body-parser": "^1.20.0",
+      "ejs": "^3.1.8",
+      "express": "^4.17.2",
+      "express-handlebars": "3.0",
+      "pug": "^3.0.2"
+   }
 }
