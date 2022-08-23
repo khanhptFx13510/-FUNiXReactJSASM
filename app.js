@@ -15,7 +15,7 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const database = require('./util/database');
 
-db.execute('SELECT * FROM products');
+db.execute('SELECT * FROM products').then().catch();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
