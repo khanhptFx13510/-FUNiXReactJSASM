@@ -15,13 +15,13 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const database = require('./util/database');
 
-db.execute('SELECT * FROM PRODUCTS')
-.then((result) => {
-   console.log(result[0], '\n', result[1]);
-})
-.catch((err) => {
-   console.log(err);
-});
+// db.execute('SELECT * FROM PRODUCTS')
+// .then((result) => {
+//    console.log(result[0], '\n', result[1]);
+// })
+// .catch((err) => {
+//    console.log(err);
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
