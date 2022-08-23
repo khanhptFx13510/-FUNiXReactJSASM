@@ -22,11 +22,11 @@ module.exports = class Product {
       
    };
 
-   static findById(id){
-      
-   };
-
    static fetchAll() {
       return db.execute('SELECT * FROM products');
+   };
+
+   static findById(id){
+      return db.execute('SELECT * FROM products WHERE products.id = ?', [id]);
    };
 };
