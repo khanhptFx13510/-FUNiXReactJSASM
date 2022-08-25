@@ -43,11 +43,11 @@ Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 User.hasMany(Product);
 User.hasOne(Cart);
 Cart.belongsTo(User);
-Cart.belongsToMany(Product , { through : CartItem});
-Product.belongsToMany(Cart , { through : CartItem});
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
 Order.belongsTo(User);
 User.hasMany(Order);
-Order.belongsTo(Product, { through : OrderItem});
+Order.belongsToMany(Product, { through: OrderItem });
 
 sequelize
    // force: true : is gonna override table and delete all records in table
