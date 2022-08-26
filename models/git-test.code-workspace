@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\git-test"
+		},
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\libraryCSS"
+		},
+		{
+			"path": "..\\..\\..\\fullStack_F8"
+		},
+		{
+			"path": "..\\..\\..\\exercise_reactJS"
+		},
+		{
+			"path": "..\\..\\..\\javascrip\\exercises"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "fullStack_F8",
+		"git.ignoreLimitWarning": true,
+		"editor.fontSize": 16
+	}
+}
