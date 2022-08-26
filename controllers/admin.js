@@ -78,7 +78,9 @@ exports.getProducts = (req, res, next) => {
             path: '/admin/products'
          });
       })
-      .catch(err => {console.log(err)})
+      .catch(err => {
+         console.log(err)
+      });
 };    
 
 // exports.postDeleteProduct = (req, res, next) => {
