@@ -1,4 +1,5 @@
 const mongodb = require('mongodb');
+const { get } = require('../routes/shop');
 const getDb = require('../util/database').getDb;
 
 const ObjectId = mongodb.ObjectId;
@@ -103,6 +104,14 @@ class User {
             });
    }
 
+   getOrders() {
+      const db = getDb();
+      return db
+         .collection('orders')
+         .find({ 'user._id': new ObjectId(this._id) })
+         .toArray();
+   }
+   
    static findById(userId){
       const db = getDb();
       return db
