@@ -15,10 +15,13 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// fetch dummy user and store that in request 
+// so that we can use it for the rest of that request, in all the routes and controllers
 app.use((req, res, next) => {
     User.findById('630c44f0675163f93d6851c2')
         .then((user) => {
@@ -32,6 +35,7 @@ app.use((req, res, next) => {
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
+app.use(authRoutes);
 
 app.use(errorController.get404);
 
