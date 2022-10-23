@@ -71,6 +71,6 @@ mongoose.connect(
             user.save();
         }
     });
-    app.listen(3000)
+    app.listen(3002)
 })
 .catch(err => console.log(err));
