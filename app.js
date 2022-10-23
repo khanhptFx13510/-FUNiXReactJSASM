@@ -61,16 +61,6 @@ mongoose.connect(
     // 'mongodb+srv://khanhpham:khanhdu123@khanhpham.6zl1ibi.mongodb.net/shop?retryWrites=true&w=majority'
 )
 .then(result => {
-    User.findOne().then((user) => {
-        if (!user) {
-            const user = new User({
-                name: 'Max',
-                email: 'max@test.com',
-                cart: { item: [] },
-            });
-            user.save();
-        }
-    });
-    app.listen(3002)
+    app.listen(3002);
 })
 .catch(err => console.log(err));
