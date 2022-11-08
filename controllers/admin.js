@@ -9,6 +9,7 @@ exports.getAddProduct = (req, res, next) => {
       editing: false,
       hasError: false,
       errorMessage: null,
+      validationErrors: [],
    });
 };
 
@@ -23,7 +24,7 @@ exports.postAddProduct = (req, res, next) => {
    if (!errors.isEmpty()) {
        console.log(errors.array());
        return res.status(422).render('admin/edit-product', {
-           pageTitle: 'Edit Product',
+           pageTitle: 'Add Product',
            path: '/admin/edit-product',
            editing: false,
            hasError: true,
@@ -34,6 +35,7 @@ exports.postAddProduct = (req, res, next) => {
                description: description,
            },
            errorMessage: errors.array()[0].msg,
+           validationErrors: errors.array(),
        });
    }
    const product = new Product({
@@ -71,6 +73,7 @@ exports.getEditProduct = (req, res, next) => {
             product: product,
             hasError: false,
             errorMessage: null,
+            validationErrors: [],
          });
       })
       .catch(err => {console.log(err)});
@@ -80,8 +83,27 @@ exports.postEditProduct = (req, res, next) => {
    const prodId = req.body.productId;
    const updatedTitle = req.body.title;
    const updatedPrice = req.body.price;
-   const updatedImageUrl = req.body.imageUrl;
    const updatedDesc = req.body.description;
+   const updatedImageUrl = req.body.imageUrl;
+   const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(422).render('admin/edit-product', {
+            pageTitle: 'Edit Product',
+            path: '/admin/edit-product',
+            editing: true,
+            hasError: true,
+            product: {
+                title: updatedTitle,
+                imageUrl: updatedImageUrl,
+                price: updatedPrice,
+                description: updatedDesc,
+                _id: prodId,
+            },
+            errorMessage: errors.array()[0].msg,
+            validationErrors: errors.array(),
+        });
+    }
    Product.findById(prodId)
       .then((product) => {
          product.title = updatedTitle;
