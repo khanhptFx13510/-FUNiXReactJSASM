@@ -84,7 +84,6 @@ app.use((error, req, res, next) => {
     // res.status(error.httpStatusCode).render(...)
     res.redirect('/500');
 });
-
 mongoose.connect(
     MONGODB_URI
     // 'mongodb+srv://khanhpham:khanhdu123@khanhpham.6zl1ibi.mongodb.net/shop?retryWrites=true&w=majority'
