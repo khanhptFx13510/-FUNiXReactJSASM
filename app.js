@@ -42,6 +42,7 @@ app.use(
 
 app.use(csrfProtection);
 app.use(flash());
+app.use(express.json());
 
 app.use((req, res, next) => {
     if (!req.session.user) {
