@@ -172,7 +172,6 @@ exports.getInvoice = (req, res, next) => {
       //     'inline; filename="' + invoiceName + '"'
       //   );
       //   res.send(data);
-      
       // });
       const file = fs.createReadStream(invoicePath);
       res.setHeader('Content-Type', 'application/pdf');
